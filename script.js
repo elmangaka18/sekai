@@ -13,28 +13,6 @@
                 });
             }
         });
-
-        // Opción 2: Hora Actual del Servidor
-        document.addEventListener('DOMContentLoaded', () => {
-            const horaElemento = document.getElementById('horaServidor');
-            const botonHora = document.getElementById('obtenerHora');
-
-            if (botonHora && horaElemento) { // Verificamos que los elementos existan
-                botonHora.addEventListener('click', async () => {
-                    try {
-                        const response = await fetch('/api/hora'); // Ruta en el servidor Node.js
-                        if (!response.ok) {
-                            throw new Error(`HTTP error! status: ${response.status}`);
-                        }
-                        const data = await response.text();
-                        horaElemento.textContent = data;
-                    } catch (error) {
-                        console.error('Error al obtener la hora del servidor:', error);
-                        horaElemento.textContent = 'Error al cargar la hora.';
-                    }
-                });
-            }
-        });
         
         // Opción 3: Mostrar/Ocultar Elemento
         document.addEventListener('DOMContentLoaded', () => {
