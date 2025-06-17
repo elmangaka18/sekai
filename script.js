@@ -15,7 +15,7 @@
         });
 
         // Opción 2: Hora Actual del Servidor
-        document.addEventListener('DOMContentLoaded', () => {
+        /*document.addEventListener('DOMContentLoaded', () => {
             const horaElemento = document.getElementById('horaServidor');
             const botonHora = document.getElementById('obtenerHora');
 
@@ -34,7 +34,31 @@
                     }
                 });
             }
+        });*/
+           // Opción 2: Hora Actual del Navegador
+   document.addEventListener('DOMContentLoaded', () => {
+    const horaElemento = document.getElementById('horaServidor');
+    const botonHora = document.getElementById('obtenerHora');
+
+    if (botonHora && horaElemento) {
+        botonHora.addEventListener('click', () => {
+            // Obtenemos la fecha y hora actual del navegador del usuario
+            const ahora = new Date();
+
+            // Formateamos la hora para que sea legible
+            // Puedes ajustar las opciones de formato según tu preferencia
+            const opcionesFormato = {
+                hour: '2-digit',
+                minute: '2-digit',
+                second: '2-digit',
+                hour12: false // Formato de 24 horas
+            };
+            const horaFormateada = ahora.toLocaleTimeString('es-ES', opcionesFormato);
+
+            horaElemento.textContent = horaFormateada;
         });
+    }
+});
         
         // Opción 3: Mostrar/Ocultar Elemento
         document.addEventListener('DOMContentLoaded', () => {
