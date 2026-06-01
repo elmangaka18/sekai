@@ -2,6 +2,8 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
+    <!-- Etiqueta crucial para el diseño adaptativo en móviles -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hoja de Vida - Jamy Javier Chacin Carvajal</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
@@ -284,149 +286,227 @@
             color: #555;
             margin-top: 1px;
         }
+
         .reverse-email {
             unicode-bidi: bidi-override;
             direction: rtl;
         }
+
         /* --- BOTÓN DE CONTACTO EN EL ENCABEZADO --- */
-.btn-open-contact {
-    background-color: #e1f5fe;
-    color: #1a5fb4;
-    border: none;
-    padding: 6px 12px;
-    border-radius: 4px;
-    font-size: 9pt;
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 0.2s ease;
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    vertical-align: middle;
-}
+        .btn-open-contact {
+            background-color: #e1f5fe;
+            color: #1a5fb4;
+            border: none;
+            padding: 6px 12px;
+            border-radius: 4px;
+            font-size: 9pt;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            vertical-align: middle;
+        }
 
-.btn-open-contact:hover {
-    background-color: #ffffff;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.15);
-    transform: translateY(-1px);
-}
+        .btn-open-contact:hover {
+            background-color: #ffffff;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.15);
+            transform: translateY(-1px);
+        }
 
-/* --- VENTANA EMERGENTE (MODAL) --- */
-.contact-dialog {
-    border: none;
-    border-radius: 8px;
-    padding: 0;
-    width: 90%;
-    max-width: 450px;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
-    background-color: #ffffff;
-}
+        /* --- VENTANA EMERGENTE (MODAL) --- */
+        .contact-dialog {
+            border: none;
+            border-radius: 8px;
+            padding: 0;
+            width: 90%;
+            max-width: 450px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+            background-color: #ffffff;
+        }
 
-/* Efecto de fondo oscurecido */
-.contact-dialog::backdrop {
-    background: rgba(44, 62, 80, 0.6);
-    backdrop-filter: blur(2px);
-}
+        /* Efecto de fondo oscurecido */
+        .contact-dialog::backdrop {
+            background: rgba(44, 62, 80, 0.6);
+            backdrop-filter: blur(2px);
+        }
 
-/* Encabezado del Modal */
-.dialog-header {
-    background-color: #1a5fb4;
-    color: #ffffff;
-    padding: 15px 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
+        /* Encabezado del Modal */
+        .dialog-header {
+            background-color: #1a5fb4;
+            color: #ffffff;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
 
-.dialog-header h3 {
-    margin: 0;
-    font-size: 12pt;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-}
+        .dialog-header h3 {
+            margin: 0;
+            font-size: 12pt;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
 
-.btn-close-dialog {
-    background: none;
-    border: none;
-    color: #ffffff;
-    font-size: 20pt;
-    cursor: pointer;
-    line-height: 1;
-    padding: 0;
-    transition: color 0.2s;
-}
+        .btn-close-dialog {
+            background: none;
+            border: none;
+            color: #ffffff;
+            font-size: 20pt;
+            cursor: pointer;
+            line-height: 1;
+            padding: 0;
+            transition: color 0.2s;
+        }
 
-.btn-close-dialog:hover {
-    color: #e1f5fe;
-}
+        .btn-close-dialog:hover {
+            color: #e1f5fe;
+        }
 
-/* Cuerpo del Formulario */
-.dialog-form {
-    padding: 20px;
-}
+        /* Cuerpo del Formulario */
+        .dialog-form {
+            padding: 20px;
+        }
 
-.form-group {
-    margin-bottom: 15px;
-}
+        .form-group {
+            margin-bottom: 15px;
+        }
 
-.form-group label {
-    display: block;
-    font-size: 9.5pt;
-    font-weight: 600;
-    color: #34495e;
-    margin-bottom: 5px;
-}
+        .form-group label {
+            display: block;
+            font-size: 9.5pt;
+            font-weight: 600;
+            color: #34495e;
+            margin-bottom: 5px;
+        }
 
-.form-group input, 
-.form-group textarea {
-    width: 100%;
-    padding: 8px 10px;
-    border: 1px solid #cbd5e1;
-    border-radius: 4px;
-    font-family: inherit;
-    font-size: 10pt;
-    color: #2c3e50;
-    transition: border-color 0.2s;
-}
+        .form-group input, 
+        .form-group textarea {
+            width: 100%;
+            padding: 8px 10px;
+            border: 1px solid #cbd5e1;
+            border-radius: 4px;
+            font-family: inherit;
+            font-size: 10pt;
+            color: #2c3e50;
+            transition: border-color 0.2s;
+        }
 
-.form-group input:focus, 
-.form-group textarea:focus {
-    outline: none;
-    border-color: #1a5fb4;
-}
+        .form-group input:focus, 
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #1a5fb4;
+        }
 
-/* Botón de Enviar dentro del Formulario */
-.btn-submit-form {
-    background-color: #1a5fb4;
-    color: #ffffff;
-    border: none;
-    width: 100%;
-    padding: 10px;
-    border-radius: 4px;
-    font-size: 10.5pt;
-    font-weight: 600;
-    cursor: pointer;
-    transition: background-color 0.2s;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 8px;
-}
+        /* Botón de Enviar dentro del Formulario */
+        .btn-submit-form {
+            background-color: #1a5fb4;
+            color: #ffffff;
+            border: none;
+            width: 100%;
+            padding: 10px;
+            border-radius: 4px;
+            font-size: 10.5pt;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.2s;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 8px;
+        }
 
-.btn-submit-form:hover {
-    background-color: #144a8c;
-}
+        .btn-submit-form:hover {
+            background-color: #144a8c;
+        }
 
-/* Ocultar elementos interactivos del modal durante la impresión física del CV */
-@media print {
-    .btn-open-contact, .contact-dialog {
-        display: none !important;
-    }
-}
+        /* --- DISEÑO RESPONSIVO (PANTALLAS < 768px: TABLETS Y MÓVILES) --- */
+        @media screen and (max-width: 768px) {
+            body {
+                padding: 10px;
+                font-size: 11pt; /* Un toque más grande en móviles para lectura fácil */
+            }
+
+            /* Forzamos a que los bloques de tipo tabla se comporten como bloques estándar */
+            .header-banner,
+            .cv-container,
+            .cv-row,
+            .left-column,
+            .right-column,
+            .header-main-info,
+            .header-photo-box,
+            .personal-grid,
+            .personal-row,
+            .personal-label,
+            .personal-value,
+            .history-header,
+            .history-title-box,
+            .history-date-box {
+                display: block !important;
+                width: 100% !important;
+                padding-left: 0 !important;
+                padding-right: 0 !important;
+                text-align: left !important;
+            }
+
+            /* Ajustes del banner en móviles */
+            .header-banner {
+                padding: 20px;
+                margin-bottom: 20px;
+            }
+
+            .header-photo-box {
+                margin-top: 15px;
+                border-top: 1px dashed rgba(255, 255, 255, 0.3);
+                padding-top: 15px !important;
+                display: none !important;
+            }
+
+            /* Ajustes en los bloques de datos personales */
+            .personal-label {
+                font-weight: bold;
+                padding-bottom: 0;
+            }
+            .personal-value {
+                padding-top: 0;
+                margin-bottom: 8px;
+            }
+
+            /* Ajustes en el historial (fechas debajo del título) */
+            .history-date-box {
+                margin-bottom: 4px;
+                font-style: italic;
+            }
+
+            /* Quitamos la línea de división lateral y damos espacio superior a la columna derecha */
+            .right-column {
+                border-left: none !important;
+                margin-top: 25px;
+                border-top: 2px solid #e2e8f0;
+                padding-top: 25px !important;
+            }
+
+            /* Ajuste del botón de contacto para móviles */
+            .btn-open-contact {
+                display: flex;
+                width: 100%;
+                justify-content: center;
+                margin-top: 10px;
+                padding: 10px;
+            }
+        }
+
+        /* Ocultar elementos interactivos del modal durante la impresión física del CV */
+        @media print {
+            .btn-open-contact, .contact-dialog {
+                display: none !important;
+            }
+        }
     </style>
 </head>
 <body>
@@ -481,9 +561,8 @@
             <div class="photo-placeholder">
                 <img src="foto.jpg" alt="Foto Jamy Chacin" onerror="this.style.display='none';">
                 <i class="fa-solid fa-user-tie" style="font-size: 24pt;"></i>
-                
             </div>
-            <span class="section-note2">*La foto no esta disponible en esta versión web</span>
+            <span class="section-note2">*La foto no está disponible en esta versión web</span>
         </div>
     </div>
 
