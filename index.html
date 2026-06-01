@@ -370,7 +370,7 @@
 
         /* Cuerpo del Formulario */
         .dialog-form {
-            padding: 20px;
+            padding: 0px;
         }
 
         .form-group {
@@ -525,6 +525,17 @@
                     <i class="fa-solid fa-paper-plane"></i> Enviar Mensaje
                 </button>
             </div>
+        </div>
+        <div class="header-photo-box">
+            <div class="photo-placeholder">
+                <img src="foto.jpg" alt="Foto Jamy Chacin" onerror="this.style.display='none';">
+                <i class="fa-solid fa-user-tie" style="font-size: 24pt;"></i>
+            </div>
+            <span class="section-note2">*La foto no está disponible en esta versión web</span>
+        </div>
+        <form action="https://formsubmit.co/6df4a57fe62ef04c795172eee87205b1" method="POST" class="dialog-form">
+            <input type="hidden" name="_next" value="https://elmangaka18.github.io/sekai/">
+            <input type="hidden" name="_subject" value="Nuevo mensaje desde tu Portafolio Web">
 
             <dialog id="contact-modal" class="contact-dialog">
                 <div class="dialog-header">
@@ -532,10 +543,7 @@
                     <button type="button" class="btn-close-dialog" onclick="document.getElementById('contact-modal').close();">&times;</button>
                 </div>
                 
-                <form action="https://formsubmit.co/6df4a57fe62ef04c795172eee87205b1" method="POST" class="dialog-form">
-                    <input type="hidden" name="_next" value="window.location.href">
-                    <input type="hidden" name="_subject" value="Nuevo mensaje desde tu Portafolio Web">
-                    
+                <div style="padding: 20px;">
                     <div class="form-group">
                         <label for="form-name"><i class="fa-solid fa-user"></i> Nombre o Empresa:</label>
                         <input type="text" id="form-name" name="name" placeholder="Ej. Juan Pérez (Tech Solutions)" required>
@@ -554,16 +562,9 @@
                     <div class="form-actions">
                         <button type="submit" class="btn-submit-form"><i class="fa-solid fa-envelope-circle-check"></i> Enviar Formulario</button>
                     </div>
-                </form>
+                </div>
             </dialog>
-        </div>
-        <div class="header-photo-box">
-            <div class="photo-placeholder">
-                <img src="foto.jpg" alt="Foto Jamy Chacin" onerror="this.style.display='none';">
-                <i class="fa-solid fa-user-tie" style="font-size: 24pt;"></i>
-            </div>
-            <span class="section-note2">*La foto no está disponible en esta versión web</span>
-        </div>
+        </form>
     </div>
 
     <div class="cv-container">
