@@ -2,45 +2,466 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Recuperación 4to período</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Hoja de Vida - Jamy Javier Chacin Carvajal</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* --- CONFIGURACIÓN GLOBAL Y DE IMPRESIÓN --- */
+        @page {
+            size: A4;
+            margin: 14mm 12mm;
+            background-color: #ffffff;
+        }
+        
+        *, *::before, *::after {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            color: #2c3e50;
+            background-color: #ffffff;
+            margin: 0;
+            padding: 0;
+            font-size: 10.5pt;
+            line-height: 1.4;
+            -webkit-print-color-adjust: exact;
+            print-color-adjust: exact;
+        }
+
+        /* --- DISEÑO DE DOS COLUMNAS --- */
+        .cv-container {
+            display: table;
+            width: 100%;
+            table-layout: fixed;
+        }
+
+        .cv-row {
+            display: table-row;
+        }
+
+        .left-column {
+            display: table-cell;
+            width: 63%;
+            padding-right: 25px;
+            vertical-align: top;
+        }
+
+        .right-column {
+            display: table-cell;
+            width: 37%;
+            padding-left: 20px;
+            border-left: 1px solid #e2e8f0;
+            vertical-align: top;
+        }
+
+        /* --- ENCABEZADO PRINCIPAL --- */
+        .header-banner {
+            background-color: #1a5fb4; 
+            color: #ffffff;
+            padding: 24px 30px;
+            border-radius: 4px;
+            margin-bottom: 25px;
+            display: table;
+            width: 100%;
+        }
+
+        .header-main-info {
+            display: table-cell;
+            vertical-align: middle;
+            width: 75%;
+        }
+
+        .header-photo-box {
+            display: table-cell;
+            vertical-align: middle;
+            width: 25%;
+            text-align: right;
+        }
+
+        /* Contenedor exacto de la foto con aspecto de pasaporte */
+        .photo-placeholder {
+            width: 85px;
+            height: 110px;
+            border: 2px solid #ffffff;
+            border-radius: 4px;
+            display: inline-block;
+            background-color: #e1f5fe;
+            color: #1a5fb4;
+            text-align: center;
+            vertical-align: middle;
+            line-height: 110px;
+            overflow: hidden;
+        }
+
+        .photo-placeholder img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .header-title h1 {
+            font-size: 20pt;
+            font-weight: 700;
+            margin: 0 0 4px 0;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .header-title .subtitle {
+            font-size: 12pt;
+            font-weight: 400;
+            color: #e1f5fe;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin: 0;
+        }
+
+        .header-contact {
+            margin-top: 12px;
+            font-size: 10pt;
+            color: #f0f4f8;
+        }
+
+        .header-contact i {
+            margin-right: 6px;
+            color: #e1f5fe;
+        }
+
+        /* --- ESTILOS DE SECCIÓN --- */
+        section {
+            margin-bottom: 22px;
+            page-break-inside: avoid;
+        }
+
+        h2 {
+            font-size: 12.5pt;
+            color: #1a5fb4;
+            text-transform: uppercase;
+            margin: 0 0 4px 0;
+            padding-bottom: 5px;
+            border-bottom: 2px solid #1a5fb4;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            page-break-after: avoid;
+        }
+
+        .section-note {
+            font-size: 8.5pt;
+            color: #7f8c8d;
+            font-style: italic;
+            margin-bottom: 12px;
+            display: block;
+        }
+
+        .section-note2 {
+            font-size: 8.5pt;
+            color: white;
+            font-style: italic;
+            margin-bottom: 12px;
+            display: block;
+        }
+
+        /* --- DATOS PERSONALES --- */
+        .personal-grid {
+            display: table;
+            width: 100%;
+        }
+
+        .personal-row {
+            display: table-row;
+        }
+
+        .personal-label {
+            display: table-cell;
+            font-weight: 600;
+            width: 40%;
+            padding: 4px 0;
+            color: #34495e;
+        }
+
+        .personal-value {
+            display: table-cell;
+            width: 60%;
+            padding: 4px 0;
+            color: #2c3e50;
+        }
+
+        /* --- HISTORIAL (ESTUDIOS Y EXPERIENCIA) --- */
+        .history-item {
+            margin-bottom: 14px;
+            page-break-inside: avoid;
+        }
+
+        .history-header {
+            display: table;
+            width: 100%;
+            margin-bottom: 2px;
+        }
+
+        .history-title-box {
+            display: table-cell;
+            width: 70%;
+            font-weight: 600;
+            color: #2c3e50;
+        }
+
+        .history-date-box {
+            display: table-cell;
+            width: 30%;
+            text-align: right;
+            font-size: 9.5pt;
+            color: #7f8c8d;
+            font-weight: 500;
+        }
+
+        .history-institution {
+            font-style: italic;
+            color: #1a5fb4;
+            font-size: 10pt;
+            margin-bottom: 2px;
+        }
+
+        .history-location {
+            font-size: 9pt;
+            color: #7f8c8d;
+        }
+
+        /* --- HABILIDADES Y LISTAS --- */
+        ul {
+            margin: 0;
+            padding-left: 16px;
+        }
+
+        li {
+            margin-bottom: 6px;
+            color: #2c3e50;
+        }
+
+        .skill-category {
+            font-weight: 600;
+            color: #34495e;
+            margin-top: 8px;
+            margin-bottom: 4px;
+            font-size: 10pt;
+        }
+
+        /* --- IDIOMAS --- */
+        .language-item {
+            margin-bottom: 8px;
+        }
+        
+        .language-name {
+            font-weight: 600;
+            color: #2c3e50;
+        }
+
+        .language-level {
+            font-size: 9.5pt;
+            color: #7f8c8d;
+            font-style: italic;
+        }
+
+        /* --- REFERENCIAS --- */
+        .reference-item {
+            margin-bottom: 12px;
+            font-size: 9.5pt;
+            page-break-inside: avoid;
+        }
+
+        .ref-name {
+            font-weight: 600;
+            color: #2c3e50;
+        }
+
+        .ref-title {
+            color: #1a5fb4;
+            font-style: italic;
+            font-size: 9pt;
+        }
+
+        .ref-phone {
+            color: #555;
+            margin-top: 1px;
+        }
+        .reverse-email {
+            unicode-bidi: bidi-override;
+            direction: rtl;
+        }
+    </style>
 </head>
 <body>
-    <header>
-        <h1>Mi Aplicación con Node.js</h1>
-        <nav>
-            <ul>
-                <li><a href="#acerca-de">Acerca de esta prueba</a></li>
-                <li><a href="otra_seccion.html">Ir a sección de funcionalidad Javascript</a></li>
-            </ul>
-        </nav>
-    </header>
 
-    <main>
-        <section id="inicio">
-            <h2>Página Principal</h2>
-            <p>Esta es la página de inicio que debe estar servida por su servidor Node.js. Utilice la navegación para explorar las diferentes secciones.</p>
-            <p>¡Esperamos que termine por servir su propia aplicación web!</p>
-        </section>
+    <div class="header-banner">
+        <div class="header-main-info">
+            <div class="header-title">
+                <h1>Jamy Javier Chacin Carvajal</h1>
+                <div class="subtitle">Docente</div>
+            </div>
+            <div class="header-contact">
+                <i class="fa-solid fa-envelope"></i> <strong>Correo electrónico:</strong> <span class="reverse-email">moc.liamg@81akagnamle</span>
+            </div>
+        </div>
+        <div class="header-photo-box">
+            <div class="photo-placeholder">
+                <img src="foto.jpg" alt="Foto Jamy Chacin" onerror="this.style.display='none';">
+                <i class="fa-solid fa-user-tie" style="font-size: 24pt;"></i>
+                
+            </div>
+            <span class="section-note2">*La foto no esta disponible en esta versión web</span>
+        </div>
+    </div>
 
-        <section id="acerca-de">
-            <h2>Acerca de esta prueba</h2>
-            <p>Este proyecto práctico tiene como objetivo evaluar su capacidad para implementar un servidor HTTP usando Node.js, interactuar con archivos estáticos y gestionar una base de datos SQLite.</p>
-            <p>Se espera que los estudiantes:</p>
-            <ul>
-                <li>Configuren un entorno de desarrollo Node.js (10%).</li>
-                <li>Creen y configuren un servidor HTTP básico (30%).</li>
-                <li>Sirvan archivos HTML y CSS de manera efectiva (30%).</li>
-                <li>Establezcan una conexión funcional con una base de datos SQLite (20%).</li>
-                <li>Manejen el cierre seguro del servidor y la base de datos (10%).</li>
-            </ul>
-            <p>¡Mucha suerte con el desarrollo!</p>
-        </section>
-    </main>
+    <div class="cv-container">
+        <div class="cv-row">
+            
+            <div class="left-column">
+                
+                <section>
+                    <h2><i class="fa-solid fa-user"></i> Datos Personales</h2>
+                    <div class="personal-grid">
+                        <div class="personal-row">
+                            <div class="personal-label">Fecha de Nacimiento:</div>
+                            <div class="personal-value">27/01/1989</div>
+                        </div>
+                        <div class="personal-row">
+                            <div class="personal-label">Lugar de Nacimiento:</div>
+                            <div class="personal-value">Zulia — Venezuela</div>
+                        </div>
+                        <div class="personal-row">
+                            <div class="personal-label">Nacionalidad:</div>
+                            <div class="personal-value">Venezolano</div>
+                        </div>
+                        <div class="personal-row">
+                            <div class="personal-label">Ubicación:</div>
+                            <div class="personal-value">El Cerrito, Valle del Cauca, Colombia</div>
+                        </div>
+                        <div class="personal-row">
+                            <div class="personal-label">Teléfono:</div>
+                            <div class="personal-value">316 746 XXXX <span style="color:#7f8c8d; font-size:9pt; font-style:italic;">(Disponible bajo solicitud)</span></div>
+                        </div>
+                    </div>
+                </section>
 
-    <footer>
-        <p>&copy; 2025 Proyecto de inplementacion de servidor Node.js</p>
-    </footer>
+                <section>
+                    <h2><i class="fa-solid fa-graduation-cap"></i> Estudios</h2>
+                    <div class="history-item">
+                        <div class="history-header">
+                            <div class="history-title-box">Licenciado en Educación Mención Química</div>
+                            <div class="history-date-box">2013</div>
+                        </div>
+                        <div class="history-institution">Universidad del Zulia</div>
+                        <div class="history-location">Maracaibo — Venezuela</div>
+                    </div>
+                    <div class="history-item">
+                        <div class="history-header">
+                            <div class="history-title-box">Bachiller en Ciencias Básicas y Tecnología</div>
+                            <div class="history-date-box">2006</div>
+                        </div>
+                        <div class="history-institution">U.E. José Paz González</div>
+                        <div class="history-location">Altagracia — Venezuela</div>
+                    </div>
+                </section>
+
+                <section>
+                    <h2><i class="fa-solid fa-briefcase"></i> Experiencia Laboral</h2>
+                    <div class="history-item">
+                        <div class="history-header">
+                            <div class="history-title-box">Docente de Tecnología, Base de Datos, Desarrollo Web, Programación, Redes y Hardware</div>
+                            <div class="history-date-box">2025 - Actualidad</div>
+                        </div>
+                        <div class="history-institution">Instituto Gabriela Mistral</div>
+                        <div class="history-location">El Cerrito — Valle del Cauca</div>
+                    </div>
+                    <div class="history-item">
+                        <div class="history-header">
+                            <div class="history-title-box">Docente de Química y Biología</div>
+                            <div class="history-date-box">2018 - 2023</div>
+                        </div>
+                        <div class="history-institution">Colegio Uziel Querit</div>
+                        <div class="history-location">Valledupar — Cesar</div>
+                    </div>
+                    <div class="history-item">
+                        <div class="history-header">
+                            <div class="history-title-box">Auxiliar Bibliotecólogo</div>
+                            <div class="history-date-box">2011 - 2013</div>
+                        </div>
+                        <div class="history-institution">Universidad del Zulia (LUZ)</div>
+                        <div class="history-location">Maracaibo — Venezuela</div>
+                    </div>
+                    <div class="history-item">
+                        <div class="history-header">
+                            <div class="history-title-box">Docente de Química</div>
+                            <div class="history-date-box">2011 - 2012</div>
+                        </div>
+                        <div class="history-institution">Liceo Técnico José Paz González</div>
+                        <div class="history-location">Altagracia — Venezuela</div>
+                    </div>
+                    <div class="history-item">
+                        <div class="history-header">
+                            <div class="history-title-box">Auxiliar de Laboratorio</div>
+                            <div class="history-date-box">2011</div>
+                        </div>
+                        <div class="history-institution">Universidad del Zulia (LUZ)</div>
+                        <div class="history-location">Maracaibo — Venezuela</div>
+                    </div>
+                </section>
+            </div>
+
+            <div class="right-column">
+                <section>
+                    <h2><i class="fa-solid fa-gear"></i> Habilidades</h2>
+                    <div class="skill-category">Habilidades informáticas:</div>
+                    <ul>
+                        <li>Automatización de procesos con IA</li>
+                        <li>Uso avanzado de Herramientas Ofimáticas (Microsoft Office, Libre Office).</li>
+                        <li>Procesos de automatización simples con CMD de Windows y Terminal de Linux.</li>
+                        <li>Programador en Visual Studio, enfocado en Python.</li>
+                        <li>Instalación de Sistemas Operativos en ordenadores (Windows, Linux, y otros).</li>
+                        <li>Reparación y mantenimiento de ordenadores.</li>
+                        <li>Uso avanzado de editores multimedia.</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2><i class="fa-solid fa-language"></i> Idiomas</h2>
+                    <div class="language-item">
+                        <div class="language-name">Español</div>
+                        <div class="language-level">Natal</div>
+                    </div>
+                    <div class="language-item">
+                        <div class="language-name">Inglés</div>
+                        <div class="language-level">Básico</div>
+                    </div>
+                </section>
+
+                <section>
+                    <h2><i class="fa-solid fa-users"></i> Referencias</h2>
+                    <span class="section-note">*Datos de contacto completos disponibles bajo solicitud.</span>
+                    <div class="reference-item">
+                        <div class="ref-name">César Contreras</div>
+                        <div class="ref-title">Ing. Químico</div>
+                        <div class="ref-phone">Tlf: 317 795 XXXX</div>
+                    </div>
+                    <div class="reference-item">
+                        <div class="ref-name">Camilo Vivas</div>
+                        <div class="ref-title">Psicólogo</div>
+                        <div class="ref-phone">Tlf: 315 290 XXXX</div>
+                    </div>
+                    <div class="reference-item">
+                        <div class="ref-name">Lilia Hoyos</div>
+                        <div class="ref-title">Lcda. Educación</div>
+                        <div class="ref-phone">Tlf: 315 887 XXXX</div>
+                    </div>
+                    <div class="reference-item">
+                        <div class="ref-name">Dianys Nieto</div>
+                        <div class="ref-title">Lcda. Educación</div>
+                        <div class="ref-phone">Tlf: 318 206 XXXX</div>
+                    </div>
+                </section>
+            </div>
+
+        </div>
+    </div>
 </body>
 </html>
