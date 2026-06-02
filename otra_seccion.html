@@ -3,46 +3,114 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Funciones Javascript</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>¡Muchas Gracias! - Jamy Javier Chacin Carvajal</title>
+    <!-- Incluimos FontAwesome para los iconos, igual que en tu CV -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        *, *::before, *::after {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            color: #2c3e50;
+            background-color: #f8fafc; /* Un fondo gris muy sutil para resaltar la tarjeta */
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        /* Tarjeta contenedora con la estética de tu CV */
+        .thank-you-card {
+            background-color: #ffffff;
+            width: 90%;
+            max-width: 550px;
+            padding: 40px 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+            text-align: center;
+            border-top: 5px solid #1a5fb4; /* El azul característico de tu banner */
+        }
+
+        /* Icono de éxito animado o destacado */
+        .icon-box {
+            color: #1a5fb4;
+            font-size: 48pt;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            font-size: 20pt;
+            font-weight: 700;
+            color: #1a5fb4;
+            margin: 0 0 10px 0;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        p {
+            font-size: 11pt;
+            line-height: 1.6;
+            color: #475569;
+            margin: 0 0 30px 0;
+        }
+
+        /* Botón de retorno con el estilo del botón "Enviar Mensaje" de tu CV */
+        .btn-back {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background-color: #1a5fb4;
+            color: #ffffff;
+            text-decoration: none;
+            padding: 12px 24px;
+            border-radius: 4px;
+            font-size: 10.5pt;
+            font-weight: 600;
+            transition: all 0.2s ease;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .btn-back:hover {
+            background-color: #144a8c;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+            transform: translateY(-1px);
+        }
+
+        /* Ajustes menores para pantallas muy pequeñas */
+        @media screen and (max-width: 480px) {
+            .thank-you-card {
+                padding: 30px 20px;
+            }
+            h1 {
+                font-size: 16pt;
+            }
+            p {
+                font-size: 10.5pt;
+            }
+        }
+    </style>
 </head>
 <body>
-    <header>
-        <h1>Funcionalidades</h1>
-        <nav>
-            <ul>
-                <li><a href="index.html">Volver a Inicio</a></li>
-            </ul>
-        </nav>
-    </header>
 
-    <main>
-        <section>
-            <h2>Contenido de la sección de funcionalidad</h2>
-            <p>Esta es una página diferente, que también debe estar servida por su servidor Node.js.</p>
-            <p>Debe ser utilizada para mostrar funciones básicas de JavaScript. A continuación, se presentan opciones de funcionalidades extra que puedes implementar:</p>
-            
-            <h3>Opción 1: Contador de Clicks (10% extra)</h3>
-            <p>Implementa un contador que se incremente cada vez que se haga clic en el botón.</p>
-            <p>Has hecho clic <span id="contadorClics">0</span> veces.</p>
-            <button id="botonClics">Haz clic para contar</button>
-            <hr> <h3>Opción 2: Hora Actual del Servidor (30% extra, rquiere ruta en el archivo del servidor)</h3>
-            <p>Crea un botón que, al ser pulsado, solicite la hora actual al servidor Node.js y la muestre aquí.</p>
-            <p>La hora del servidor es: <span id="horaServidor">--:--:--</span></p>
-            <button id="obtenerHora">Obtener Hora del Servidor</button>
-            <hr> <h3>Opción 3: Mostrar/Ocultar Elemento (10% extra)</h3>
-            <p>Desarrolla un botón que alterne la visibilidad del texto siguiente.</p>
-            <button id="toggleVisible">Mostrar/Ocultar Mensaje</button>
-            <p id="mensajeOcultable" style="display: block;">
-                ¡Este es un mensaje secreto que puedes mostrar u ocultar!
-            </p>
-            
-        </section>
-    </main>
+    <div class="thank-you-card">
+        <div class="icon-box">
+            <i class="fa-solid fa-circle-check"></i>
+        </div>
+        <h1>¡Mensaje Enviado con Éxito!</h1>
+        <p>
+            Gracias por ponerte en contacto. Tu mensaje ha sido procesado correctamente. 
+            Me comunicaré contigo lo antes posible para revisar tu propuesta o comentarios.
+        </p>
+        
+        <!-- Enlace relativo que regresa a la raíz de la carpeta actual (tu index.html) -->
+        <a href="index.html" class="btn-back">
+            <i class="fa-solid fa-file-pdf"></i> Volver a ver Hoja de Vida
+        </a>
+    </div>
 
-    <footer>
-        <p>&copy; 2025 Proyecto de inplementacion de servidor Node.js</p>
-    </footer>
-    <script src="script.js"></script>
 </body>
 </html>
